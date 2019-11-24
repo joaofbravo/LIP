@@ -1,0 +1,728 @@
+
+Processing NewTMVAClassificationApplication.C...
+===> Start NewTMVAClassificationApplication
+
+--- Reader                   : Booking "BDT method" of type "BDT" from weights/TMVAClassification_BDT.weights.xml.
+--- MethodBase               : Reading weight file: weights/TMVAClassification_BDT.weights.xml
+--- BDT                      : Read method "BDT" of type "BDT"
+--- BDT                      : MVA method was trained with TMVA Version: 4.2.0
+--- BDT                      : MVA method was trained with ROOT Version: 5.34/30
+--- DataSetInfo              : Added class "Signal"	 with internal class number 0
+--- DataSetInfo              : Added class "Background"	 with internal class number 1
+--- Reader                   : Booked classifier "BDT" of type: "BDT"
+---- Select signal sample
+---- Processing: 3262433 events
+---- ... Processing event: 0
+(Int_t)8718
+
+Processing NewTMVAClassification.C...
+===> Start TMVAClassification
+
+--- Factory                  : You are running ROOT Version: 5.34/30, Apr 23, 2015
+--- Factory                  : 
+--- Factory                  : _/_/_/_/_/ _|      _|  _|      _|    _|_|   
+--- Factory                  :    _/      _|_|  _|_|  _|      _|  _|    _| 
+--- Factory                  :   _/       _|  _|  _|  _|      _|  _|_|_|_| 
+--- Factory                  :  _/        _|      _|    _|  _|    _|    _| 
+--- Factory                  : _/         _|      _|      _|      _|    _| 
+--- Factory                  : 
+--- Factory                  : ___________TMVA Version 4.2.0, Sep 19, 2013
+--- Factory                  : 
+--- DataSetInfo              : Added class "Signal"	 with internal class number 0
+--- Factory                  : Add Tree jetdata of type Signal with 170892 events
+--- DataSetInfo              : Added class "Background"	 with internal class number 1
+--- Factory                  : Add Tree jetdata of type Background with 475448 events
+--- DataSetInfo              : Class index : 0  name : Signal
+--- DataSetInfo              : Class index : 1  name : Background
+--- Factory                  : Booking method: [1mBDT[0m
+--- DataSetFactory           : Splitmode is: "RANDOM" the mixmode is: "SAMEASSPLITMODE"
+--- DataSetFactory           : Create training and testing trees -- looping over class "Signal" ...
+--- DataSetFactory           : Weight expression for class 'Signal': "out_centzone>0 ? out_JZweight*out_evweight : 1."
+--- DataSetFactory           : Create training and testing trees -- looping over class "Background" ...
+--- DataSetFactory           : Weight expression for class 'Background': "out_centzone>0 ? out_JZweight*out_evweight : 1."
+--- DataSetFactory           : Number of events in input trees (after possible flattening of arrays):
+--- DataSetFactory           :     Signal          -- number of events       : 170892  / sum of weights: 170892
+--- DataSetFactory           :     Background      -- number of events       : 475448  / sum of weights: 475448
+--- DataSetFactory           :     Signal     tree -- total number of entries: 170892
+--- DataSetFactory           :     Background tree -- total number of entries: 475448
+--- DataSetFactory           : Preselection: (will NOT affect number of requested training and testing events)
+--- DataSetFactory           :     Signal     requirement: "out_abseta<2.5"
+--- DataSetFactory           :     Signal          -- number of events passed: 163271  / sum of weights: 163271
+--- DataSetFactory           :     Signal          -- efficiency             : 0.955405
+--- DataSetFactory           :     Background requirement: "out_abseta<2.5"
+--- DataSetFactory           :     Background      -- number of events passed: 440189  / sum of weights: 440189
+--- DataSetFactory           :     Background      -- efficiency             : 0.92584
+--- DataSetFactory           :  you have opted for interpreting the requested number of training/testing events
+--- DataSetFactory           :  to be the number of events AFTER your preselection cuts
+--- DataSetFactory           :  you have opted for interpreting the requested number of training/testing events
+--- DataSetFactory           :  to be the number of events AFTER your preselection cuts
+--- DataSetFactory           : Weight renormalisation mode: "NumEvents": renormalises all event classes 
+--- DataSetFactory           :  such that the effective (weighted) number of events in each class equals the respective 
+--- DataSetFactory           :  number of events (entries) that you demanded in PrepareTrainingAndTestTree("","nTrain_Signal=.. )
+--- DataSetFactory           :  ... i.e. such that Sum[i=1..N_j]{w_i} = N_j, j=0,1,2...
+--- DataSetFactory           :  ... (note that N_j is the sum of TRAINING events (nTrain_j...with j=Signal,Background..
+--- DataSetFactory           :  ..... Testing events are not renormalised nor included in the renormalisation factor! )
+--- DataSetFactory           : --> Rescale Signal     event weights by factor: 1
+--- DataSetFactory           : --> Rescale Background event weights by factor: 1
+--- DataSetFactory           : Number of training and testing events after rescaling:
+--- DataSetFactory           : ------------------------------------------------------
+--- DataSetFactory           : Signal     -- training events            : 48000 (sum of weights: 48000) - requested were 48000 events
+--- DataSetFactory           : Signal     -- testing events             : 48000 (sum of weights: 48000) - requested were 48000 events
+--- DataSetFactory           : Signal     -- training and testing events: 96000 (sum of weights: 96000)
+--- DataSetFactory           : Signal     -- due to the preselection a scaling factor has been applied to the numbers of requested events: 0.955405
+--- DataSetFactory           : Background -- training events            : 48000 (sum of weights: 48000) - requested were 48000 events
+--- DataSetFactory           : Background -- testing events             : 48000 (sum of weights: 48000) - requested were 48000 events
+--- DataSetFactory           : Background -- training and testing events: 96000 (sum of weights: 96000)
+--- DataSetFactory           : Background -- due to the preselection a scaling factor has been applied to the numbers of requested events: 0.92584
+--- DataSetFactory           : Create internal training tree
+--- DataSetFactory           : Create internal testing tree
+--- DataSetInfo              : Correlation matrix (Signal):
+--- DataSetInfo              : ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+--- DataSetInfo              :                      out_pt out_abseta out_ip2d_cllr_pbpu out_ip2d_cllr_pbpc out_ip2d_cllr_pcpu out_ip3d_cllr_pbpu out_ip3d_cllr_pbpc out_ip3d_cllr_pcpu out_sv1_ntrkv out_sv1_n2t out_sv1_m out_sv1_efc out_sv1_sig3d out_sv1_deltaR out_sv1_Lxy out_sv1_L3d out_jf_llr out_jf_m out_jf_efc out_jf_dRFlightDir out_jf_ntrkAtVx out_jf_nvtx out_jf_sig3d out_jf_nvtx1t out_jf_n2t
+--- DataSetInfo              :             out_pt:  +1.000     -0.078             +0.108             +0.087             +0.101             +0.092             +0.063             +0.100        +0.165      +0.182    +0.156      +0.125        +0.203         +0.104      +0.343      +0.250     +0.111   +0.129     +0.111             +0.111          +0.154      +0.160       +0.193        +0.131     +0.098
+--- DataSetInfo              :         out_abseta:  -0.078     +1.000             -0.108             -0.082             -0.084             -0.084             -0.007             -0.117        -0.096      -0.117    -0.110      -0.088        -0.107         -0.083      -0.057      +0.264     -0.055   -0.070     -0.045             -0.045          -0.077      -0.067       -0.072        -0.007     +0.015
+--- DataSetInfo              : out_ip2d_cllr_pbpu:  +0.108     -0.108             +1.000             +0.676             +0.868             +0.868             +0.647             +0.808        +0.585      +0.587    +0.546      +0.466        +0.435         +0.420      +0.246      +0.164     +0.384   +0.407     +0.350             +0.346          +0.549      +0.445       +0.453        +0.174     +0.378
+--- DataSetInfo              : out_ip2d_cllr_pbpc:  +0.087     -0.082             +0.676             +1.000             +0.376             +0.624             +0.564             +0.590        +0.325      +0.329    +0.315      +0.275        +0.303         +0.241      +0.222      +0.139     +0.249   +0.245     +0.231             +0.228          +0.311      +0.276       +0.316        +0.134     +0.199
+--- DataSetInfo              : out_ip2d_cllr_pcpu:  +0.101     -0.084             +0.868             +0.376             +1.000             +0.758             +0.582             +0.763        +0.520      +0.507    +0.473      +0.416        +0.343         +0.375      +0.155      +0.103     +0.351   +0.356     +0.322             +0.319          +0.489      +0.398       +0.375        +0.152     +0.348
+--- DataSetInfo              : out_ip3d_cllr_pbpu:  +0.092     -0.084             +0.868             +0.624             +0.758             +1.000             +0.723             +0.901        +0.665      +0.657    +0.608      +0.520        +0.462         +0.471      +0.245      +0.171     +0.435   +0.458     +0.395             +0.391          +0.635      +0.504       +0.495        +0.186     +0.450
+--- DataSetInfo              : out_ip3d_cllr_pbpc:  +0.063     -0.007             +0.647             +0.564             +0.582             +0.723             +1.000             +0.498        +0.396      +0.385    +0.372      +0.328        +0.336         +0.290      +0.239      +0.193     +0.296   +0.294     +0.273             +0.270          +0.383      +0.326       +0.368        +0.152     +0.257
+--- DataSetInfo              : out_ip3d_cllr_pcpu:  +0.100     -0.117             +0.808             +0.590             +0.763             +0.901             +0.498             +1.000        +0.601      +0.585    +0.540      +0.471        +0.369         +0.426      +0.142      +0.071     +0.402   +0.411     +0.367             +0.364          +0.574      +0.460       +0.409        +0.159     +0.418
+--- DataSetInfo              :      out_sv1_ntrkv:  +0.165     -0.096             +0.585             +0.325             +0.520             +0.665             +0.396             +0.601        +1.000      +0.839    +0.841      +0.828        +0.740         +0.790      +0.416      +0.322     +0.472   +0.493     +0.427             +0.423          +0.801      +0.603       +0.539        +0.098     +0.622
+--- DataSetInfo              :        out_sv1_n2t:  +0.182     -0.117             +0.587             +0.329             +0.507             +0.657             +0.385             +0.585        +0.839      +1.000    +0.688      +0.502        +0.531         +0.467      +0.327      +0.222     +0.315   +0.422     +0.274             +0.271          +0.759      +0.451       +0.429        +0.081     +0.687
+--- DataSetInfo              :          out_sv1_m:  +0.156     -0.110             +0.546             +0.315             +0.473             +0.608             +0.372             +0.540        +0.841      +0.688    +1.000      +0.715        +0.682         +0.683      +0.326      +0.234     +0.422   +0.600     +0.376             +0.372          +0.672      +0.525       +0.501        +0.089     +0.468
+--- DataSetInfo              :        out_sv1_efc:  +0.125     -0.088             +0.466             +0.275             +0.416             +0.520             +0.328             +0.471        +0.828      +0.502    +0.715      +1.000        +0.824         +0.971      +0.455      +0.365     +0.526   +0.424     +0.495             +0.492          +0.597      +0.620       +0.552        +0.141     +0.362
+--- DataSetInfo              :      out_sv1_sig3d:  +0.203     -0.107             +0.435             +0.303             +0.343             +0.462             +0.336             +0.369        +0.740      +0.531    +0.682      +0.824        +1.000         +0.790      +0.747      +0.579     +0.434   +0.381     +0.408             +0.404          +0.539      +0.521       +0.609        +0.151     +0.324
+--- DataSetInfo              :     out_sv1_deltaR:  +0.104     -0.083             +0.420             +0.241             +0.375             +0.471             +0.290             +0.426        +0.790      +0.467    +0.683      +0.971        +0.790         +1.000      +0.412      +0.341     +0.493   +0.397     +0.464             +0.462          +0.554      +0.581       +0.511        +0.134     +0.342
+--- DataSetInfo              :        out_sv1_Lxy:  +0.343     -0.057             +0.246             +0.222             +0.155             +0.245             +0.239             +0.142        +0.416      +0.327    +0.326      +0.455        +0.747         +0.412      +1.000      +0.815     +0.233   +0.161     +0.222             +0.220          +0.293      +0.287       +0.455        +0.136     +0.165
+--- DataSetInfo              :        out_sv1_L3d:  +0.250     +0.264             +0.164             +0.139             +0.103             +0.171             +0.193             +0.071        +0.322      +0.222    +0.234      +0.365        +0.579         +0.341      +0.815      +1.000     +0.171   +0.108     +0.166             +0.164          +0.212      +0.210       +0.345        +0.109     +0.170
+--- DataSetInfo              :         out_jf_llr:  +0.111     -0.055             +0.384             +0.249             +0.351             +0.435             +0.296             +0.402        +0.472      +0.315    +0.422      +0.526        +0.434         +0.493      +0.233      +0.171     +1.000   +0.549     +0.997             +0.996          +0.605      +0.804       +0.906        +0.554     +0.355
+--- DataSetInfo              :           out_jf_m:  +0.129     -0.070             +0.407             +0.245             +0.356             +0.458             +0.294             +0.411        +0.493      +0.422    +0.600      +0.424        +0.381         +0.397      +0.161      +0.108     +0.549   +1.000     +0.514             +0.511          +0.611      +0.597       +0.556        +0.212     +0.370
+--- DataSetInfo              :         out_jf_efc:  +0.111     -0.045             +0.350             +0.231             +0.322             +0.395             +0.273             +0.367        +0.427      +0.274    +0.376      +0.495        +0.408         +0.464      +0.222      +0.166     +0.997   +0.514     +1.000             +1.000          +0.555      +0.778       +0.895        +0.577     +0.326
+--- DataSetInfo              : out_jf_dRFlightDir:  +0.111     -0.045             +0.346             +0.228             +0.319             +0.391             +0.270             +0.364        +0.423      +0.271    +0.372      +0.492        +0.404         +0.462      +0.220      +0.164     +0.996   +0.511     +1.000             +1.000          +0.551      +0.776       +0.893        +0.578     +0.325
+--- DataSetInfo              :    out_jf_ntrkAtVx:  +0.154     -0.077             +0.549             +0.311             +0.489             +0.635             +0.383             +0.574        +0.801      +0.759    +0.672      +0.597        +0.539         +0.554      +0.293      +0.212     +0.605   +0.611     +0.555             +0.551          +1.000      +0.811       +0.678        +0.021     +0.673
+--- DataSetInfo              :        out_jf_nvtx:  +0.160     -0.067             +0.445             +0.276             +0.398             +0.504             +0.326             +0.460        +0.603      +0.451    +0.525      +0.620        +0.521         +0.581      +0.287      +0.210     +0.804   +0.597     +0.778             +0.776          +0.811      +1.000       +0.807        +0.220     +0.436
+--- DataSetInfo              :       out_jf_sig3d:  +0.193     -0.072             +0.453             +0.316             +0.375             +0.495             +0.368             +0.409        +0.539      +0.429    +0.501      +0.552        +0.609         +0.511      +0.455      +0.345     +0.906   +0.556     +0.895             +0.893          +0.678      +0.807       +1.000        +0.479     +0.387
+--- DataSetInfo              :      out_jf_nvtx1t:  +0.131     -0.007             +0.174             +0.134             +0.152             +0.186             +0.152             +0.159        +0.098      +0.081    +0.089      +0.141        +0.151         +0.134      +0.136      +0.109     +0.554   +0.212     +0.577             +0.578          +0.021      +0.220       +0.479        +1.000     +0.141
+--- DataSetInfo              :         out_jf_n2t:  +0.098     +0.015             +0.378             +0.199             +0.348             +0.450             +0.257             +0.418        +0.622      +0.687    +0.468      +0.362        +0.324         +0.342      +0.165      +0.170     +0.355   +0.370     +0.326             +0.325          +0.673      +0.436       +0.387        +0.141     +1.000
+--- DataSetInfo              : ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+--- DataSetInfo              : Correlation matrix (Background):
+--- DataSetInfo              : ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+--- DataSetInfo              :                      out_pt out_abseta out_ip2d_cllr_pbpu out_ip2d_cllr_pbpc out_ip2d_cllr_pcpu out_ip3d_cllr_pbpu out_ip3d_cllr_pbpc out_ip3d_cllr_pcpu out_sv1_ntrkv out_sv1_n2t out_sv1_m out_sv1_efc out_sv1_sig3d out_sv1_deltaR out_sv1_Lxy out_sv1_L3d out_jf_llr out_jf_m out_jf_efc out_jf_dRFlightDir out_jf_ntrkAtVx out_jf_nvtx out_jf_sig3d out_jf_nvtx1t out_jf_n2t
+--- DataSetInfo              :             out_pt:  +1.000     -0.013             +0.222             +0.231             +0.247             +0.211             +0.222             +0.246        +0.085      +0.111    +0.086      +0.083        +0.091         +0.033      +0.092      +0.068     +0.178   +0.180     +0.180             +0.180          +0.223      +0.213       +0.187        +0.153     +0.091
+--- DataSetInfo              :         out_abseta:  -0.013     +1.000             +0.007             +0.004             +0.005             +0.010             +0.007             +0.005        +0.020      +0.014    +0.019      +0.019        +0.015         +0.020      +0.012      +0.049     +0.109   +0.076     +0.109             +0.109          +0.092      +0.102       +0.109        +0.110     +0.121
+--- DataSetInfo              : out_ip2d_cllr_pbpu:  +0.222     +0.007             +1.000             +0.997             +0.996             +0.997             +0.990             +0.995        +0.053      +0.052    +0.044      +0.061        +0.046         +0.016      +0.037      +0.022     +0.175   +0.134     +0.174             +0.175          +0.156      +0.171       +0.174        +0.161     +0.074
+--- DataSetInfo              : out_ip2d_cllr_pbpc:  +0.231     +0.004             +0.997             +1.000             +0.994             +0.994             +0.991             +0.994        +0.044      +0.044    +0.036      +0.053        +0.040         +0.011      +0.035      +0.020     +0.165   +0.124     +0.164             +0.165          +0.148      +0.162       +0.164        +0.151     +0.069
+--- DataSetInfo              : out_ip2d_cllr_pcpu:  +0.247     +0.005             +0.996             +0.994             +1.000             +0.994             +0.991             +0.998        +0.052      +0.051    +0.042      +0.060        +0.046         +0.015      +0.038      +0.023     +0.178   +0.136     +0.178             +0.178          +0.162      +0.176       +0.177        +0.163     +0.076
+--- DataSetInfo              : out_ip3d_cllr_pbpu:  +0.211     +0.010             +0.997             +0.994             +0.994             +1.000             +0.991             +0.996        +0.056      +0.055    +0.046      +0.064        +0.049         +0.018      +0.038      +0.023     +0.182   +0.141     +0.181             +0.181          +0.162      +0.177       +0.180        +0.168     +0.084
+--- DataSetInfo              : out_ip3d_cllr_pbpc:  +0.222     +0.007             +0.990             +0.991             +0.991             +0.991             +1.000             +0.987        +0.045      +0.044    +0.036      +0.052        +0.040         +0.011      +0.035      +0.021     +0.169   +0.126     +0.168             +0.169          +0.151      +0.165       +0.168        +0.155     +0.075
+--- DataSetInfo              : out_ip3d_cllr_pcpu:  +0.246     +0.005             +0.995             +0.994             +0.998             +0.996             +0.987             +1.000        +0.053      +0.053    +0.044      +0.062        +0.047         +0.016      +0.038      +0.023     +0.181   +0.140     +0.181             +0.181          +0.165      +0.179       +0.180        +0.166     +0.080
+--- DataSetInfo              :      out_sv1_ntrkv:  +0.085     +0.020             +0.053             +0.044             +0.052             +0.056             +0.045             +0.053        +1.000      +0.883    +0.906      +0.964        +0.907         +0.840      +0.515      +0.499     +0.186   +0.206     +0.183             +0.183          +0.283      +0.242       +0.199        +0.152     +0.199
+--- DataSetInfo              :        out_sv1_n2t:  +0.111     +0.014             +0.052             +0.044             +0.051             +0.055             +0.044             +0.053        +0.883      +1.000    +0.817      +0.818        +0.834         +0.640      +0.523      +0.473     +0.174   +0.201     +0.171             +0.171          +0.290      +0.235       +0.195        +0.145     +0.226
+--- DataSetInfo              :          out_sv1_m:  +0.086     +0.019             +0.044             +0.036             +0.042             +0.046             +0.036             +0.044        +0.906      +0.817    +1.000      +0.840        +0.828         +0.776      +0.407      +0.408     +0.166   +0.213     +0.163             +0.163          +0.254      +0.216       +0.178        +0.136     +0.180
+--- DataSetInfo              :        out_sv1_efc:  +0.083     +0.019             +0.061             +0.053             +0.060             +0.064             +0.052             +0.062        +0.964      +0.818    +0.840      +1.000        +0.892         +0.808      +0.513      +0.482     +0.194   +0.205     +0.191             +0.191          +0.281      +0.249       +0.204        +0.158     +0.182
+--- DataSetInfo              :      out_sv1_sig3d:  +0.091     +0.015             +0.046             +0.040             +0.046             +0.049             +0.040             +0.047        +0.907      +0.834    +0.828      +0.892        +1.000         +0.780      +0.636      +0.591     +0.165   +0.171     +0.163             +0.163          +0.247      +0.213       +0.183        +0.135     +0.168
+--- DataSetInfo              :     out_sv1_deltaR:  +0.033     +0.020             +0.016             +0.011             +0.015             +0.018             +0.011             +0.016        +0.840      +0.640    +0.776      +0.808        +0.780         +1.000      +0.306      +0.387     +0.113   +0.120     +0.112             +0.112          +0.160      +0.143       +0.118        +0.095     +0.116
+--- DataSetInfo              :        out_sv1_Lxy:  +0.092     +0.012             +0.037             +0.035             +0.038             +0.038             +0.035             +0.038        +0.515      +0.523    +0.407      +0.513        +0.636         +0.306      +1.000      +0.857     +0.097   +0.091     +0.096             +0.096          +0.152      +0.128       +0.114        +0.079     +0.100
+--- DataSetInfo              :        out_sv1_L3d:  +0.068     +0.049             +0.022             +0.020             +0.023             +0.023             +0.021             +0.023        +0.499      +0.473    +0.408      +0.482        +0.591         +0.387      +0.857      +1.000     +0.074   +0.072     +0.073             +0.073          +0.120      +0.098       +0.088        +0.062     +0.090
+--- DataSetInfo              :         out_jf_llr:  +0.178     +0.109             +0.175             +0.165             +0.178             +0.182             +0.169             +0.181        +0.186      +0.174    +0.166      +0.194        +0.165         +0.113      +0.097      +0.074     +1.000   +0.679     +1.000             +1.000          +0.826      +0.934       +0.993        +0.956     +0.595
+--- DataSetInfo              :           out_jf_m:  +0.180     +0.076             +0.134             +0.124             +0.136             +0.141             +0.126             +0.140        +0.206      +0.201    +0.213      +0.205        +0.171         +0.120      +0.091      +0.072     +0.679   +1.000     +0.674             +0.674          +0.646      +0.678       +0.676        +0.655     +0.464
+--- DataSetInfo              :         out_jf_efc:  +0.180     +0.109             +0.174             +0.164             +0.178             +0.181             +0.168             +0.181        +0.183      +0.171    +0.163      +0.191        +0.163         +0.112      +0.096      +0.073     +1.000   +0.674     +1.000             +1.000          +0.822      +0.932       +0.993        +0.957     +0.593
+--- DataSetInfo              : out_jf_dRFlightDir:  +0.180     +0.109             +0.175             +0.165             +0.178             +0.181             +0.169             +0.181        +0.183      +0.171    +0.163      +0.191        +0.163         +0.112      +0.096      +0.073     +1.000   +0.674     +1.000             +1.000          +0.822      +0.932       +0.993        +0.957     +0.593
+--- DataSetInfo              :    out_jf_ntrkAtVx:  +0.223     +0.092             +0.156             +0.148             +0.162             +0.162             +0.151             +0.165        +0.283      +0.290    +0.254      +0.281        +0.247         +0.160      +0.152      +0.120     +0.826   +0.646     +0.822             +0.822          +1.000      +0.968       +0.849        +0.666     +0.592
+--- DataSetInfo              :        out_jf_nvtx:  +0.213     +0.102             +0.171             +0.162             +0.176             +0.177             +0.165             +0.179        +0.242      +0.235    +0.216      +0.249        +0.213         +0.143      +0.128      +0.098     +0.934   +0.678     +0.932             +0.932          +0.968      +1.000       +0.945        +0.812     +0.609
+--- DataSetInfo              :       out_jf_sig3d:  +0.187     +0.109             +0.174             +0.164             +0.177             +0.180             +0.168             +0.180        +0.199      +0.195    +0.178      +0.204        +0.183         +0.118      +0.114      +0.088     +0.993   +0.676     +0.993             +0.993          +0.849      +0.945       +1.000        +0.942     +0.602
+--- DataSetInfo              :      out_jf_nvtx1t:  +0.153     +0.110             +0.161             +0.151             +0.163             +0.168             +0.155             +0.166        +0.152      +0.145    +0.136      +0.158        +0.135         +0.095      +0.079      +0.062     +0.956   +0.655     +0.957             +0.957          +0.666      +0.812       +0.942        +1.000     +0.569
+--- DataSetInfo              :         out_jf_n2t:  +0.091     +0.121             +0.074             +0.069             +0.076             +0.084             +0.075             +0.080        +0.199      +0.226    +0.180      +0.182        +0.168         +0.116      +0.100      +0.090     +0.595   +0.464     +0.593             +0.593          +0.592      +0.609       +0.602        +0.569     +1.000
+--- DataSetInfo              : ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+--- DataSetFactory           :  
+--- Factory                  : 
+--- Factory                  : current transformation string: 'I'
+--- Factory                  : Create Transformation "I" with events from all classes.
+--- Id                       : Transformation, Variable selection : 
+--- Id                       : Input : variable 'out_pt' (index=0).   <---> Output : variable 'out_pt' (index=0).
+--- Id                       : Input : variable 'out_abseta' (index=1).   <---> Output : variable 'out_abseta' (index=1).
+--- Id                       : Input : variable 'out_ip2d_cllr_pbpu' (index=2).   <---> Output : variable 'out_ip2d_cllr_pbpu' (index=2).
+--- Id                       : Input : variable 'out_ip2d_cllr_pbpc' (index=3).   <---> Output : variable 'out_ip2d_cllr_pbpc' (index=3).
+--- Id                       : Input : variable 'out_ip2d_cllr_pcpu' (index=4).   <---> Output : variable 'out_ip2d_cllr_pcpu' (index=4).
+--- Id                       : Input : variable 'out_ip3d_cllr_pbpu' (index=5).   <---> Output : variable 'out_ip3d_cllr_pbpu' (index=5).
+--- Id                       : Input : variable 'out_ip3d_cllr_pbpc' (index=6).   <---> Output : variable 'out_ip3d_cllr_pbpc' (index=6).
+--- Id                       : Input : variable 'out_ip3d_cllr_pcpu' (index=7).   <---> Output : variable 'out_ip3d_cllr_pcpu' (index=7).
+--- Id                       : Input : variable 'out_sv1_ntrkv' (index=8).   <---> Output : variable 'out_sv1_ntrkv' (index=8).
+--- Id                       : Input : variable 'out_sv1_n2t' (index=9).   <---> Output : variable 'out_sv1_n2t' (index=9).
+--- Id                       : Input : variable 'out_sv1_m' (index=10).   <---> Output : variable 'out_sv1_m' (index=10).
+--- Id                       : Input : variable 'out_sv1_efc' (index=11).   <---> Output : variable 'out_sv1_efc' (index=11).
+--- Id                       : Input : variable 'out_sv1_sig3d' (index=12).   <---> Output : variable 'out_sv1_sig3d' (index=12).
+--- Id                       : Input : variable 'out_sv1_deltaR' (index=13).   <---> Output : variable 'out_sv1_deltaR' (index=13).
+--- Id                       : Input : variable 'out_sv1_Lxy' (index=14).   <---> Output : variable 'out_sv1_Lxy' (index=14).
+--- Id                       : Input : variable 'out_sv1_L3d' (index=15).   <---> Output : variable 'out_sv1_L3d' (index=15).
+--- Id                       : Input : variable 'out_jf_llr' (index=16).   <---> Output : variable 'out_jf_llr' (index=16).
+--- Id                       : Input : variable 'out_jf_m' (index=17).   <---> Output : variable 'out_jf_m' (index=17).
+--- Id                       : Input : variable 'out_jf_efc' (index=18).   <---> Output : variable 'out_jf_efc' (index=18).
+--- Id                       : Input : variable 'out_jf_dRFlightDir' (index=19).   <---> Output : variable 'out_jf_dRFlightDir' (index=19).
+--- Id                       : Input : variable 'out_jf_ntrkAtVx' (index=20).   <---> Output : variable 'out_jf_ntrkAtVx' (index=20).
+--- Id                       : Input : variable 'out_jf_nvtx' (index=21).   <---> Output : variable 'out_jf_nvtx' (index=21).
+--- Id                       : Input : variable 'out_jf_sig3d' (index=22).   <---> Output : variable 'out_jf_sig3d' (index=22).
+--- Id                       : Input : variable 'out_jf_nvtx1t' (index=23).   <---> Output : variable 'out_jf_nvtx1t' (index=23).
+--- Id                       : Input : variable 'out_jf_n2t' (index=24).   <---> Output : variable 'out_jf_n2t' (index=24).
+--- Id                       : Preparing the Identity transformation...
+--- TFHandler_Factory        : -------------------------------------------------------------------------------------------------------------
+--- TFHandler_Factory        :           Variable                  Mean                  RMS          [        Min                  Max ]
+--- TFHandler_Factory        : -------------------------------------------------------------------------------------------------------------
+--- TFHandler_Factory        :             out_pt:              60355.              47914.   [              20000.          1.3605e+06 ]
+--- TFHandler_Factory        :         out_abseta:              1.0131             0.66505   [          4.9629e-06              2.4999 ]
+--- TFHandler_Factory        : out_ip2d_cllr_pbpu:             -1.8310              12.260   [             -30.000              100.00 ]
+--- TFHandler_Factory        : out_ip2d_cllr_pbpc:             -3.7216              10.713   [             -30.000              100.00 ]
+--- TFHandler_Factory        : out_ip2d_cllr_pcpu:             -1.9882              11.472   [             -30.000              100.00 ]
+--- TFHandler_Factory        : out_ip3d_cllr_pbpu:             -1.4159              12.595   [             -30.000              100.00 ]
+--- TFHandler_Factory        : out_ip3d_cllr_pbpc:             -3.5861              10.781   [             -30.000              100.00 ]
+--- TFHandler_Factory        : out_ip3d_cllr_pcpu:             -1.7056              11.620   [             -30.000              100.00 ]
+--- TFHandler_Factory        :      out_sv1_ntrkv:             0.86889              2.5440   [             -1.0000              13.000 ]
+--- TFHandler_Factory        :        out_sv1_n2t:              1.7230              5.0537   [             -1.0000              66.000 ]
+--- TFHandler_Factory        :          out_sv1_m:              686.62              1160.0   [             -99.000              5998.7 ]
+--- TFHandler_Factory        :        out_sv1_efc:             -60.156              48.572   [             -99.000             0.99999 ]
+--- TFHandler_Factory        :      out_sv1_sig3d:             -46.966              71.071   [             -99.000              684.23 ]
+--- TFHandler_Factory        :     out_sv1_deltaR:            -0.57895             0.54796   [             -1.0000              7.5611 ]
+--- TFHandler_Factory        :        out_sv1_Lxy:              2.0723              6.2853   [             -1.0000              142.84 ]
+--- TFHandler_Factory        :        out_sv1_L3d:              4.3235              13.217   [             -1.0000              569.80 ]
+--- TFHandler_Factory        :         out_jf_llr:             -46.149              50.086   [             -99.000              7.8656 ]
+--- TFHandler_Factory        :           out_jf_m:              1205.1              1686.4   [             -99.000              9990.3 ]
+--- TFHandler_Factory        :         out_jf_efc:             -46.478              49.722   [             -99.000              1.0000 ]
+--- TFHandler_Factory        : out_jf_dRFlightDir:             -46.750              49.464   [             -99.000              1.1522 ]
+--- TFHandler_Factory        :    out_jf_ntrkAtVx:             0.90033              2.3458   [             -1.0000              13.000 ]
+--- TFHandler_Factory        :        out_jf_nvtx:           -0.040000             0.99666   [             -1.0000              4.0000 ]
+--- TFHandler_Factory        :       out_jf_sig3d:             -36.040              61.372   [             -99.000              93.318 ]
+--- TFHandler_Factory        :      out_jf_nvtx1t:            -0.18303             0.91989   [             -1.0000              6.0000 ]
+--- TFHandler_Factory        :         out_jf_n2t:              1.4716              4.1538   [             -1.0000              63.000 ]
+--- TFHandler_Factory        : -------------------------------------------------------------------------------------------------------------
+--- TFHandler_Factory        : Plot event variables for Id
+--- TFHandler_Factory        : [32m
+--- TFHandler_Factory        : <PlotVariables> Will not produce scatter plots ==> 
+--- TFHandler_Factory        : |  The number of 25 input variables and 0 target values would require 300 two-dimensional
+--- TFHandler_Factory        : |  histograms, which would occupy the computer's memory. Note that this
+--- TFHandler_Factory        : |  suppression does not have any consequences for your analysis, other
+--- TFHandler_Factory        : |  than not disposing of these scatter plots. You can modify the maximum
+--- TFHandler_Factory        : |  number of input variables allowed to generate scatter plots in your
+--- TFHandler_Factory        : |  script via the command line:
+--- TFHandler_Factory        : |  "(TMVA::gConfig().GetVariablePlotting()).fMaxNumOfAllowedVariablesForScatterPlots = <some int>;"[0m
+--- TFHandler_Factory        : 
+--- TFHandler_Factory        : Some more output
+--- TFHandler_Factory        :  
+--- TFHandler_Factory        : Ranking input variables (method unspecific)...
+--- IdTransformation         : Ranking result (top variable is best ranked)
+--- IdTransformation         : -------------------------------------------
+--- IdTransformation         : Rank : Variable           : Separation
+--- IdTransformation         : -------------------------------------------
+--- IdTransformation         :    1 : out_ip3d_cllr_pcpu : 6.342e-01
+--- IdTransformation         :    2 : out_ip2d_cllr_pcpu : 6.188e-01
+--- IdTransformation         :    3 : out_jf_llr         : 6.179e-01
+--- IdTransformation         :    4 : out_jf_m           : 6.136e-01
+--- IdTransformation         :    5 : out_ip3d_cllr_pbpu : 6.090e-01
+--- IdTransformation         :    6 : out_jf_ntrkAtVx    : 6.005e-01
+--- IdTransformation         :    7 : out_jf_nvtx        : 5.957e-01
+--- IdTransformation         :    8 : out_jf_sig3d       : 5.905e-01
+--- IdTransformation         :    9 : out_sv1_deltaR     : 5.825e-01
+--- IdTransformation         :   10 : out_sv1_m          : 5.778e-01
+--- IdTransformation         :   11 : out_sv1_n2t        : 5.771e-01
+--- IdTransformation         :   12 : out_sv1_ntrkv      : 5.766e-01
+--- IdTransformation         :   13 : out_sv1_sig3d      : 5.758e-01
+--- IdTransformation         :   14 : out_sv1_Lxy        : 5.757e-01
+--- IdTransformation         :   15 : out_sv1_efc        : 5.753e-01
+--- IdTransformation         :   16 : out_jf_nvtx1t      : 5.571e-01
+--- IdTransformation         :   17 : out_jf_n2t         : 5.480e-01
+--- IdTransformation         :   18 : out_jf_efc         : 5.297e-01
+--- IdTransformation         :   19 : out_jf_dRFlightDir : 5.296e-01
+--- IdTransformation         :   20 : out_ip2d_cllr_pbpu : 5.256e-01
+--- IdTransformation         :   21 : out_sv1_L3d        : 4.898e-01
+--- IdTransformation         :   22 : out_ip3d_cllr_pbpc : 3.709e-01
+--- IdTransformation         :   23 : out_ip2d_cllr_pbpc : 3.395e-01
+--- IdTransformation         :   24 : out_pt             : 2.288e-01
+--- IdTransformation         :   25 : out_abseta         : 3.699e-03
+--- IdTransformation         : -------------------------------------------
+--- Factory                  :  
+--- Factory                  : Train all methods for Classification ...
+--- Factory                  : Train method: BDT for Classification
+--- BDT                      : Begin training
+--- BDT                      :  found and suggest the following possible pre-selection cuts 
+--- BDT                      : as option DoPreselection was not used, these cuts however will not be performed, but the training will see the full sample
+--- BDT                      :  found cut: Sig if var 4 > 10.4239
+--- BDT                      :  found cut: Sig if var 16 > 6.68312
+--- BDT                      : <InitEventSample> For classification trees, 
+--- BDT                      :  the effective number of backgrounds is scaled to match 
+--- BDT                      :  the signal. Othersise the first boosting step would do 'just that'!
+--- BDT                      : re-normlise events such that Sig and Bkg have respective sum of weights = 1
+--- BDT                      :   sig->sig*1ev. bkg->bkg*1ev.
+--- BDT                      : #events: (reweighted) sig: 48000 bkg: 48000
+--- BDT                      : #events: (unweighted) sig: 48000 bkg: 48000
+--- BDT                      : Training 1000 Decision Trees ... patience please
+--- BinaryTree               : The minimal node size MinNodeSize=2.5 fMinNodeSize=2.5% is translated to an actual number of events = 1196.65 for the training sample size of 47866
+--- BinaryTree               : Note: This number will be taken as absolute minimum in the node, 
+--- BinaryTree               :       in terms of 'weighted events' and unweighted ones !! 
+
+Processing NewTMVAClassification.C...
+===> Start TMVAClassification
+
+--- Factory                  : You are running ROOT Version: 5.34/30, Apr 23, 2015
+--- Factory                  : 
+--- Factory                  : _/_/_/_/_/ _|      _|  _|      _|    _|_|   
+--- Factory                  :    _/      _|_|  _|_|  _|      _|  _|    _| 
+--- Factory                  :   _/       _|  _|  _|  _|      _|  _|_|_|_| 
+--- Factory                  :  _/        _|      _|    _|  _|    _|    _| 
+--- Factory                  : _/         _|      _|      _|      _|    _| 
+--- Factory                  : 
+--- Factory                  : ___________TMVA Version 4.2.0, Sep 19, 2013
+--- Factory                  : 
+--- DataSetInfo              : Added class "Signal"	 with internal class number 0
+--- Factory                  : Add Tree jetdata of type Signal with 170892 events
+--- DataSetInfo              : Added class "Background"	 with internal class number 1
+--- Factory                  : Add Tree jetdata of type Background with 475448 events
+--- DataSetInfo              : Class index : 0  name : Signal
+--- DataSetInfo              : Class index : 1  name : Background
+--- Factory                  : Booking method: [1mBDT[0m
+--- DataSetFactory           : Splitmode is: "RANDOM" the mixmode is: "SAMEASSPLITMODE"
+--- DataSetFactory           : Create training and testing trees -- looping over class "Signal" ...
+--- DataSetFactory           : Weight expression for class 'Signal': "out_centzone>0 ? out_JZweight*out_evweight : 1."
+--- DataSetFactory           : Create training and testing trees -- looping over class "Background" ...
+--- DataSetFactory           : Weight expression for class 'Background': "out_centzone>0 ? out_JZweight*out_evweight : 1."
+--- DataSetFactory           : Number of events in input trees (after possible flattening of arrays):
+--- DataSetFactory           :     Signal          -- number of events       : 170892  / sum of weights: 170892
+--- DataSetFactory           :     Background      -- number of events       : 475448  / sum of weights: 475448
+--- DataSetFactory           :     Signal     tree -- total number of entries: 170892
+--- DataSetFactory           :     Background tree -- total number of entries: 475448
+--- DataSetFactory           : Preselection: (will NOT affect number of requested training and testing events)
+--- DataSetFactory           :     Signal     requirement: "out_abseta<2.5"
+--- DataSetFactory           :     Signal          -- number of events passed: 163271  / sum of weights: 163271
+--- DataSetFactory           :     Signal          -- efficiency             : 0.955405
+--- DataSetFactory           :     Background requirement: "out_abseta<2.5"
+--- DataSetFactory           :     Background      -- number of events passed: 440189  / sum of weights: 440189
+--- DataSetFactory           :     Background      -- efficiency             : 0.92584
+--- DataSetFactory           :  you have opted for interpreting the requested number of training/testing events
+--- DataSetFactory           :  to be the number of events AFTER your preselection cuts
+--- DataSetFactory           :  you have opted for interpreting the requested number of training/testing events
+--- DataSetFactory           :  to be the number of events AFTER your preselection cuts
+--- DataSetFactory           : Weight renormalisation mode: "NumEvents": renormalises all event classes 
+--- DataSetFactory           :  such that the effective (weighted) number of events in each class equals the respective 
+--- DataSetFactory           :  number of events (entries) that you demanded in PrepareTrainingAndTestTree("","nTrain_Signal=.. )
+--- DataSetFactory           :  ... i.e. such that Sum[i=1..N_j]{w_i} = N_j, j=0,1,2...
+--- DataSetFactory           :  ... (note that N_j is the sum of TRAINING events (nTrain_j...with j=Signal,Background..
+--- DataSetFactory           :  ..... Testing events are not renormalised nor included in the renormalisation factor! )
+--- DataSetFactory           : --> Rescale Signal     event weights by factor: 1
+--- DataSetFactory           : --> Rescale Background event weights by factor: 1
+--- DataSetFactory           : Number of training and testing events after rescaling:
+--- DataSetFactory           : ------------------------------------------------------
+--- DataSetFactory           : Signal     -- training events            : 80000 (sum of weights: 80000) - requested were 80000 events
+--- DataSetFactory           : Signal     -- testing events             : 80000 (sum of weights: 80000) - requested were 80000 events
+--- DataSetFactory           : Signal     -- training and testing events: 160000 (sum of weights: 160000)
+--- DataSetFactory           : Signal     -- due to the preselection a scaling factor has been applied to the numbers of requested events: 0.955405
+--- DataSetFactory           : Background -- training events            : 80000 (sum of weights: 80000) - requested were 80000 events
+--- DataSetFactory           : Background -- testing events             : 80000 (sum of weights: 80000) - requested were 80000 events
+--- DataSetFactory           : Background -- training and testing events: 160000 (sum of weights: 160000)
+--- DataSetFactory           : Background -- due to the preselection a scaling factor has been applied to the numbers of requested events: 0.92584
+--- DataSetFactory           : Create internal training tree
+--- DataSetFactory           : Create internal testing tree
+--- DataSetInfo              : Correlation matrix (Signal):
+--- DataSetInfo              : ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+--- DataSetInfo              :                      out_pt out_abseta out_ip2d_cllr_pbpu out_ip2d_cllr_pbpc out_ip2d_cllr_pcpu out_ip3d_cllr_pbpu out_ip3d_cllr_pbpc out_ip3d_cllr_pcpu out_sv1_ntrkv out_sv1_n2t out_sv1_m out_sv1_efc out_sv1_sig3d out_sv1_deltaR out_sv1_Lxy out_sv1_L3d out_jf_llr out_jf_m out_jf_efc out_jf_dRFlightDir out_jf_ntrkAtVx out_jf_nvtx out_jf_sig3d out_jf_nvtx1t out_jf_n2t
+--- DataSetInfo              :             out_pt:  +1.000     -0.079             +0.106             +0.091             +0.095             +0.090             +0.058             +0.098        +0.160      +0.179    +0.154      +0.121        +0.197         +0.100      +0.330      +0.244     +0.108   +0.126     +0.109             +0.109          +0.147      +0.154       +0.187        +0.128     +0.092
+--- DataSetInfo              :         out_abseta:  -0.079     +1.000             -0.111             -0.082             -0.087             -0.083             -0.008             -0.117        -0.097      -0.117    -0.109      -0.089        -0.109         -0.085      -0.059      +0.262     -0.054   -0.070     -0.044             -0.044          -0.076      -0.067       -0.070        -0.003     +0.017
+--- DataSetInfo              : out_ip2d_cllr_pbpu:  +0.106     -0.111             +1.000             +0.678             +0.870             +0.865             +0.645             +0.795        +0.581      +0.584    +0.541      +0.463        +0.434         +0.418      +0.247      +0.165     +0.385   +0.406     +0.351             +0.347          +0.547      +0.446       +0.452        +0.176     +0.374
+--- DataSetInfo              : out_ip2d_cllr_pbpc:  +0.091     -0.082             +0.678             +1.000             +0.383             +0.631             +0.578             +0.583        +0.324      +0.329    +0.313      +0.276        +0.303         +0.242      +0.228      +0.145     +0.253   +0.247     +0.234             +0.232          +0.311      +0.278       +0.318        +0.137     +0.196
+--- DataSetInfo              : out_ip2d_cllr_pcpu:  +0.095     -0.087             +0.870             +0.383             +1.000             +0.754             +0.567             +0.766        +0.515      +0.504    +0.469      +0.411        +0.342         +0.371      +0.151      +0.100     +0.349   +0.357     +0.320             +0.318          +0.487      +0.398       +0.373        +0.151     +0.344
+--- DataSetInfo              : out_ip3d_cllr_pbpu:  +0.090     -0.083             +0.865             +0.631             +0.754             +1.000             +0.714             +0.899        +0.660      +0.654    +0.602      +0.517        +0.461         +0.469      +0.242      +0.173     +0.436   +0.455     +0.396             +0.392          +0.632      +0.505       +0.494        +0.189     +0.447
+--- DataSetInfo              : out_ip3d_cllr_pbpc:  +0.058     -0.008             +0.645             +0.578             +0.567             +0.714             +1.000             +0.483        +0.388      +0.380    +0.363      +0.321        +0.330         +0.284      +0.235      +0.193     +0.292   +0.285     +0.269             +0.267          +0.377      +0.321       +0.362        +0.151     +0.253
+--- DataSetInfo              : out_ip3d_cllr_pcpu:  +0.098     -0.117             +0.795             +0.583             +0.766             +0.899             +0.483             +1.000        +0.595      +0.579    +0.533      +0.467        +0.365         +0.423      +0.138      +0.070     +0.401   +0.408     +0.367             +0.364          +0.569      +0.459       +0.407        +0.161     +0.413
+--- DataSetInfo              :      out_sv1_ntrkv:  +0.160     -0.097             +0.581             +0.324             +0.515             +0.660             +0.388             +0.595        +1.000      +0.839    +0.840      +0.830        +0.743         +0.794      +0.415      +0.328     +0.472   +0.491     +0.427             +0.423          +0.800      +0.606       +0.537        +0.099     +0.620
+--- DataSetInfo              :        out_sv1_n2t:  +0.179     -0.117             +0.584             +0.329             +0.504             +0.654             +0.380             +0.579        +0.839      +1.000    +0.689      +0.504        +0.532         +0.471      +0.326      +0.228     +0.316   +0.420     +0.274             +0.271          +0.758      +0.454       +0.428        +0.084     +0.687
+--- DataSetInfo              :          out_sv1_m:  +0.154     -0.109             +0.541             +0.313             +0.469             +0.602             +0.363             +0.533        +0.840      +0.689    +1.000      +0.716        +0.682         +0.684      +0.325      +0.240     +0.421   +0.598     +0.375             +0.372          +0.671      +0.527       +0.500        +0.090     +0.467
+--- DataSetInfo              :        out_sv1_efc:  +0.121     -0.089             +0.463             +0.276             +0.411             +0.517             +0.321             +0.467        +0.830      +0.504    +0.716      +1.000        +0.826         +0.973      +0.455      +0.371     +0.525   +0.421     +0.494             +0.491          +0.600      +0.623       +0.550        +0.139     +0.362
+--- DataSetInfo              :      out_sv1_sig3d:  +0.197     -0.109             +0.434             +0.303             +0.342             +0.461             +0.330             +0.365        +0.743      +0.532    +0.682      +0.826        +1.000         +0.794      +0.746      +0.589     +0.433   +0.379     +0.407             +0.403          +0.542      +0.524       +0.606        +0.147     +0.325
+--- DataSetInfo              :     out_sv1_deltaR:  +0.100     -0.085             +0.418             +0.242             +0.371             +0.469             +0.284             +0.423        +0.794      +0.471    +0.684      +0.973        +0.794         +1.000      +0.414      +0.348     +0.494   +0.395     +0.465             +0.462          +0.557      +0.585       +0.511        +0.132     +0.343
+--- DataSetInfo              :        out_sv1_Lxy:  +0.330     -0.059             +0.247             +0.228             +0.151             +0.242             +0.235             +0.138        +0.415      +0.326    +0.325      +0.455        +0.746         +0.414      +1.000      +0.817     +0.230   +0.158     +0.219             +0.217          +0.292      +0.286       +0.447        +0.129     +0.164
+--- DataSetInfo              :        out_sv1_L3d:  +0.244     +0.262             +0.165             +0.145             +0.100             +0.173             +0.193             +0.070        +0.328      +0.228    +0.240      +0.371        +0.589         +0.348      +0.817      +1.000     +0.172   +0.107     +0.167             +0.165          +0.217      +0.214       +0.346        +0.107     +0.174
+--- DataSetInfo              :         out_jf_llr:  +0.108     -0.054             +0.385             +0.253             +0.349             +0.436             +0.292             +0.401        +0.472      +0.316    +0.421      +0.525        +0.433         +0.494      +0.230      +0.172     +1.000   +0.550     +0.997             +0.996          +0.607      +0.806       +0.907        +0.556     +0.355
+--- DataSetInfo              :           out_jf_m:  +0.126     -0.070             +0.406             +0.247             +0.357             +0.455             +0.285             +0.408        +0.491      +0.420    +0.598      +0.421        +0.379         +0.395      +0.158      +0.107     +0.550   +1.000     +0.515             +0.512          +0.608      +0.595       +0.555        +0.217     +0.367
+--- DataSetInfo              :         out_jf_efc:  +0.109     -0.044             +0.351             +0.234             +0.320             +0.396             +0.269             +0.367        +0.427      +0.274    +0.375      +0.494        +0.407         +0.465      +0.219      +0.167     +0.997   +0.515     +1.000             +1.000          +0.556      +0.780       +0.896        +0.578     +0.327
+--- DataSetInfo              : out_jf_dRFlightDir:  +0.109     -0.044             +0.347             +0.232             +0.318             +0.392             +0.267             +0.364        +0.423      +0.271    +0.372      +0.491        +0.403         +0.462      +0.217      +0.165     +0.996   +0.512     +1.000             +1.000          +0.553      +0.777       +0.894        +0.579     +0.325
+--- DataSetInfo              :    out_jf_ntrkAtVx:  +0.147     -0.076             +0.547             +0.311             +0.487             +0.632             +0.377             +0.569        +0.800      +0.758    +0.671      +0.600        +0.542         +0.557      +0.292      +0.217     +0.607   +0.608     +0.556             +0.553          +1.000      +0.813       +0.678        +0.026     +0.672
+--- DataSetInfo              :        out_jf_nvtx:  +0.154     -0.067             +0.446             +0.278             +0.398             +0.505             +0.321             +0.459        +0.606      +0.454    +0.527      +0.623        +0.524         +0.585      +0.286      +0.214     +0.806   +0.595     +0.780             +0.777          +0.813      +1.000       +0.809        +0.222     +0.438
+--- DataSetInfo              :       out_jf_sig3d:  +0.187     -0.070             +0.452             +0.318             +0.373             +0.494             +0.362             +0.407        +0.537      +0.428    +0.500      +0.550        +0.606         +0.511      +0.447      +0.346     +0.907   +0.555     +0.896             +0.894          +0.678      +0.809       +1.000        +0.482     +0.387
+--- DataSetInfo              :      out_jf_nvtx1t:  +0.128     -0.003             +0.176             +0.137             +0.151             +0.189             +0.151             +0.161        +0.099      +0.084    +0.090      +0.139        +0.147         +0.132      +0.129      +0.107     +0.556   +0.217     +0.578             +0.579          +0.026      +0.222       +0.482        +1.000     +0.148
+--- DataSetInfo              :         out_jf_n2t:  +0.092     +0.017             +0.374             +0.196             +0.344             +0.447             +0.253             +0.413        +0.620      +0.687    +0.467      +0.362        +0.325         +0.343      +0.164      +0.174     +0.355   +0.367     +0.327             +0.325          +0.672      +0.438       +0.387        +0.148     +1.000
+--- DataSetInfo              : ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+--- DataSetInfo              : Correlation matrix (Background):
+--- DataSetInfo              : ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+--- DataSetInfo              :                      out_pt out_abseta out_ip2d_cllr_pbpu out_ip2d_cllr_pbpc out_ip2d_cllr_pcpu out_ip3d_cllr_pbpu out_ip3d_cllr_pbpc out_ip3d_cllr_pcpu out_sv1_ntrkv out_sv1_n2t out_sv1_m out_sv1_efc out_sv1_sig3d out_sv1_deltaR out_sv1_Lxy out_sv1_L3d out_jf_llr out_jf_m out_jf_efc out_jf_dRFlightDir out_jf_ntrkAtVx out_jf_nvtx out_jf_sig3d out_jf_nvtx1t out_jf_n2t
+--- DataSetInfo              :             out_pt:  +1.000     -0.013             +0.219             +0.228             +0.246             +0.209             +0.220             +0.244        +0.086      +0.107    +0.089      +0.084        +0.093         +0.037      +0.098      +0.074     +0.177   +0.185     +0.179             +0.179          +0.223      +0.212       +0.186        +0.151     +0.093
+--- DataSetInfo              :         out_abseta:  -0.013     +1.000             +0.008             +0.005             +0.005             +0.011             +0.008             +0.006        +0.019      +0.011    +0.017      +0.019        +0.017         +0.021      +0.012      +0.050     +0.110   +0.077     +0.110             +0.110          +0.093      +0.103       +0.110        +0.111     +0.120
+--- DataSetInfo              : out_ip2d_cllr_pbpu:  +0.219     +0.008             +1.000             +0.997             +0.996             +0.997             +0.991             +0.995        +0.058      +0.056    +0.050      +0.065        +0.051         +0.022      +0.037      +0.024     +0.175   +0.134     +0.175             +0.175          +0.158      +0.172       +0.174        +0.162     +0.072
+--- DataSetInfo              : out_ip2d_cllr_pbpc:  +0.228     +0.005             +0.997             +1.000             +0.996             +0.995             +0.992             +0.996        +0.049      +0.048    +0.041      +0.056        +0.045         +0.017      +0.035      +0.023     +0.166   +0.124     +0.165             +0.165          +0.150      +0.163       +0.165        +0.152     +0.067
+--- DataSetInfo              : out_ip2d_cllr_pcpu:  +0.246     +0.005             +0.996             +0.996             +1.000             +0.994             +0.991             +0.999        +0.057      +0.055    +0.048      +0.064        +0.051         +0.021      +0.038      +0.025     +0.179   +0.136     +0.178             +0.178          +0.164      +0.177       +0.178        +0.163     +0.075
+--- DataSetInfo              : out_ip3d_cllr_pbpu:  +0.209     +0.011             +0.997             +0.995             +0.994             +1.000             +0.992             +0.996        +0.061      +0.059    +0.053      +0.068        +0.053         +0.025      +0.038      +0.025     +0.183   +0.141     +0.182             +0.182          +0.164      +0.178       +0.181        +0.169     +0.083
+--- DataSetInfo              : out_ip3d_cllr_pbpc:  +0.220     +0.008             +0.991             +0.992             +0.991             +0.992             +1.000             +0.988        +0.051      +0.049    +0.043      +0.057        +0.045         +0.019      +0.035      +0.023     +0.170   +0.127     +0.169             +0.169          +0.152      +0.166       +0.168        +0.156     +0.075
+--- DataSetInfo              : out_ip3d_cllr_pcpu:  +0.244     +0.006             +0.995             +0.996             +0.999             +0.996             +0.988             +1.000        +0.058      +0.056    +0.049      +0.066        +0.052         +0.022      +0.039      +0.025     +0.182   +0.140     +0.181             +0.182          +0.167      +0.181       +0.181        +0.167     +0.078
+--- DataSetInfo              :      out_sv1_ntrkv:  +0.086     +0.019             +0.058             +0.049             +0.057             +0.061             +0.051             +0.058        +1.000      +0.871    +0.912      +0.963        +0.905         +0.840      +0.521      +0.494     +0.191   +0.213     +0.189             +0.189          +0.286      +0.245       +0.205        +0.158     +0.213
+--- DataSetInfo              :        out_sv1_n2t:  +0.107     +0.011             +0.056             +0.048             +0.055             +0.059             +0.049             +0.056        +0.871      +1.000    +0.806      +0.804        +0.823         +0.630      +0.520      +0.451     +0.176   +0.210     +0.173             +0.173          +0.294      +0.235       +0.198        +0.146     +0.234
+--- DataSetInfo              :          out_sv1_m:  +0.089     +0.017             +0.050             +0.041             +0.048             +0.053             +0.043             +0.049        +0.912      +0.806    +1.000      +0.845        +0.825         +0.773      +0.418      +0.406     +0.173   +0.225     +0.170             +0.170          +0.259      +0.221       +0.186        +0.145     +0.199
+--- DataSetInfo              :        out_sv1_efc:  +0.084     +0.019             +0.065             +0.056             +0.064             +0.068             +0.057             +0.066        +0.963      +0.804    +0.845      +1.000        +0.894         +0.815      +0.517      +0.484     +0.200   +0.211     +0.197             +0.197          +0.280      +0.250       +0.210        +0.165     +0.191
+--- DataSetInfo              :      out_sv1_sig3d:  +0.093     +0.017             +0.051             +0.045             +0.051             +0.053             +0.045             +0.052        +0.905      +0.823    +0.825      +0.894        +1.000         +0.775      +0.653      +0.605     +0.170   +0.177     +0.168             +0.168          +0.247      +0.215       +0.188        +0.142     +0.178
+--- DataSetInfo              :     out_sv1_deltaR:  +0.037     +0.021             +0.022             +0.017             +0.021             +0.025             +0.019             +0.022        +0.840      +0.630    +0.773      +0.815        +0.775         +1.000      +0.314      +0.389     +0.121   +0.127     +0.120             +0.120          +0.164      +0.148       +0.127        +0.103     +0.127
+--- DataSetInfo              :        out_sv1_Lxy:  +0.098     +0.012             +0.037             +0.035             +0.038             +0.038             +0.035             +0.039        +0.521      +0.520    +0.418      +0.517        +0.653         +0.314      +1.000      +0.848     +0.097   +0.093     +0.096             +0.096          +0.152      +0.128       +0.114        +0.078     +0.107
+--- DataSetInfo              :        out_sv1_L3d:  +0.074     +0.050             +0.024             +0.023             +0.025             +0.025             +0.023             +0.025        +0.494      +0.451    +0.406      +0.484        +0.605         +0.389      +0.848      +1.000     +0.076   +0.075     +0.075             +0.075          +0.120      +0.099       +0.090        +0.063     +0.094
+--- DataSetInfo              :         out_jf_llr:  +0.177     +0.110             +0.175             +0.166             +0.179             +0.183             +0.170             +0.182        +0.191      +0.176    +0.173      +0.200        +0.170         +0.121      +0.097      +0.076     +1.000   +0.675     +1.000             +1.000          +0.826      +0.934       +0.993        +0.956     +0.596
+--- DataSetInfo              :           out_jf_m:  +0.185     +0.077             +0.134             +0.124             +0.136             +0.141             +0.127             +0.140        +0.213      +0.210    +0.225      +0.211        +0.177         +0.127      +0.093      +0.075     +0.675   +1.000     +0.670             +0.670          +0.646      +0.676       +0.673        +0.648     +0.469
+--- DataSetInfo              :         out_jf_efc:  +0.179     +0.110             +0.175             +0.165             +0.178             +0.182             +0.169             +0.181        +0.189      +0.173    +0.170      +0.197        +0.168         +0.120      +0.096      +0.075     +1.000   +0.670     +1.000             +1.000          +0.822      +0.933       +0.993        +0.956     +0.594
+--- DataSetInfo              : out_jf_dRFlightDir:  +0.179     +0.110             +0.175             +0.165             +0.178             +0.182             +0.169             +0.182        +0.189      +0.173    +0.170      +0.197        +0.168         +0.120      +0.096      +0.075     +1.000   +0.670     +1.000             +1.000          +0.822      +0.932       +0.993        +0.956     +0.594
+--- DataSetInfo              :    out_jf_ntrkAtVx:  +0.223     +0.093             +0.158             +0.150             +0.164             +0.164             +0.152             +0.167        +0.286      +0.294    +0.259      +0.280        +0.247         +0.164      +0.152      +0.120     +0.826   +0.646     +0.822             +0.822          +1.000      +0.967       +0.850        +0.664     +0.591
+--- DataSetInfo              :        out_jf_nvtx:  +0.212     +0.103             +0.172             +0.163             +0.177             +0.178             +0.166             +0.181        +0.245      +0.235    +0.221      +0.250        +0.215         +0.148      +0.128      +0.099     +0.934   +0.676     +0.933             +0.932          +0.967      +1.000       +0.946        +0.811     +0.607
+--- DataSetInfo              :       out_jf_sig3d:  +0.186     +0.110             +0.174             +0.165             +0.178             +0.181             +0.168             +0.181        +0.205      +0.198    +0.186      +0.210        +0.188         +0.127      +0.114      +0.090     +0.993   +0.673     +0.993             +0.993          +0.850      +0.946       +1.000        +0.941     +0.604
+--- DataSetInfo              :      out_jf_nvtx1t:  +0.151     +0.111             +0.162             +0.152             +0.163             +0.169             +0.156             +0.167        +0.158      +0.146    +0.145      +0.165        +0.142         +0.103      +0.078      +0.063     +0.956   +0.648     +0.956             +0.956          +0.664      +0.811       +0.941        +1.000     +0.569
+--- DataSetInfo              :         out_jf_n2t:  +0.093     +0.120             +0.072             +0.067             +0.075             +0.083             +0.075             +0.078        +0.213      +0.234    +0.199      +0.191        +0.178         +0.127      +0.107      +0.094     +0.596   +0.469     +0.594             +0.594          +0.591      +0.607       +0.604        +0.569     +1.000
+--- DataSetInfo              : ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+--- DataSetFactory           :  
+--- Factory                  : 
+--- Factory                  : current transformation string: 'I'
+--- Factory                  : Create Transformation "I" with events from all classes.
+--- Id                       : Transformation, Variable selection : 
+--- Id                       : Input : variable 'out_pt' (index=0).   <---> Output : variable 'out_pt' (index=0).
+--- Id                       : Input : variable 'out_abseta' (index=1).   <---> Output : variable 'out_abseta' (index=1).
+--- Id                       : Input : variable 'out_ip2d_cllr_pbpu' (index=2).   <---> Output : variable 'out_ip2d_cllr_pbpu' (index=2).
+--- Id                       : Input : variable 'out_ip2d_cllr_pbpc' (index=3).   <---> Output : variable 'out_ip2d_cllr_pbpc' (index=3).
+--- Id                       : Input : variable 'out_ip2d_cllr_pcpu' (index=4).   <---> Output : variable 'out_ip2d_cllr_pcpu' (index=4).
+--- Id                       : Input : variable 'out_ip3d_cllr_pbpu' (index=5).   <---> Output : variable 'out_ip3d_cllr_pbpu' (index=5).
+--- Id                       : Input : variable 'out_ip3d_cllr_pbpc' (index=6).   <---> Output : variable 'out_ip3d_cllr_pbpc' (index=6).
+--- Id                       : Input : variable 'out_ip3d_cllr_pcpu' (index=7).   <---> Output : variable 'out_ip3d_cllr_pcpu' (index=7).
+--- Id                       : Input : variable 'out_sv1_ntrkv' (index=8).   <---> Output : variable 'out_sv1_ntrkv' (index=8).
+--- Id                       : Input : variable 'out_sv1_n2t' (index=9).   <---> Output : variable 'out_sv1_n2t' (index=9).
+--- Id                       : Input : variable 'out_sv1_m' (index=10).   <---> Output : variable 'out_sv1_m' (index=10).
+--- Id                       : Input : variable 'out_sv1_efc' (index=11).   <---> Output : variable 'out_sv1_efc' (index=11).
+--- Id                       : Input : variable 'out_sv1_sig3d' (index=12).   <---> Output : variable 'out_sv1_sig3d' (index=12).
+--- Id                       : Input : variable 'out_sv1_deltaR' (index=13).   <---> Output : variable 'out_sv1_deltaR' (index=13).
+--- Id                       : Input : variable 'out_sv1_Lxy' (index=14).   <---> Output : variable 'out_sv1_Lxy' (index=14).
+--- Id                       : Input : variable 'out_sv1_L3d' (index=15).   <---> Output : variable 'out_sv1_L3d' (index=15).
+--- Id                       : Input : variable 'out_jf_llr' (index=16).   <---> Output : variable 'out_jf_llr' (index=16).
+--- Id                       : Input : variable 'out_jf_m' (index=17).   <---> Output : variable 'out_jf_m' (index=17).
+--- Id                       : Input : variable 'out_jf_efc' (index=18).   <---> Output : variable 'out_jf_efc' (index=18).
+--- Id                       : Input : variable 'out_jf_dRFlightDir' (index=19).   <---> Output : variable 'out_jf_dRFlightDir' (index=19).
+--- Id                       : Input : variable 'out_jf_ntrkAtVx' (index=20).   <---> Output : variable 'out_jf_ntrkAtVx' (index=20).
+--- Id                       : Input : variable 'out_jf_nvtx' (index=21).   <---> Output : variable 'out_jf_nvtx' (index=21).
+--- Id                       : Input : variable 'out_jf_sig3d' (index=22).   <---> Output : variable 'out_jf_sig3d' (index=22).
+--- Id                       : Input : variable 'out_jf_nvtx1t' (index=23).   <---> Output : variable 'out_jf_nvtx1t' (index=23).
+--- Id                       : Input : variable 'out_jf_n2t' (index=24).   <---> Output : variable 'out_jf_n2t' (index=24).
+--- Id                       : Preparing the Identity transformation...
+--- TFHandler_Factory        : -------------------------------------------------------------------------------------------------------------
+--- TFHandler_Factory        :           Variable                  Mean                  RMS          [        Min                  Max ]
+--- TFHandler_Factory        : -------------------------------------------------------------------------------------------------------------
+--- TFHandler_Factory        :             out_pt:              60316.              48021.   [              20000.          1.5256e+06 ]
+--- TFHandler_Factory        :         out_abseta:              1.0149             0.66577   [          4.9629e-06              2.5000 ]
+--- TFHandler_Factory        : out_ip2d_cllr_pbpu:             -1.8436              12.274   [             -30.000              100.00 ]
+--- TFHandler_Factory        : out_ip2d_cllr_pbpc:             -3.7333              10.703   [             -30.000              100.00 ]
+--- TFHandler_Factory        : out_ip2d_cllr_pcpu:             -1.9952              11.488   [             -30.000              100.00 ]
+--- TFHandler_Factory        : out_ip3d_cllr_pbpu:             -1.4314              12.601   [             -30.000              100.00 ]
+--- TFHandler_Factory        : out_ip3d_cllr_pbpc:             -3.5933              10.797   [             -30.000              100.00 ]
+--- TFHandler_Factory        : out_ip3d_cllr_pcpu:             -1.7182              11.626   [             -30.000              100.00 ]
+--- TFHandler_Factory        :      out_sv1_ntrkv:             0.86081              2.5355   [             -1.0000              13.000 ]
+--- TFHandler_Factory        :        out_sv1_n2t:              1.7023              5.0136   [             -1.0000              70.000 ]
+--- TFHandler_Factory        :          out_sv1_m:              684.21              1159.0   [             -99.000              5998.7 ]
+--- TFHandler_Factory        :        out_sv1_efc:             -60.239              48.554   [             -99.000             0.99999 ]
+--- TFHandler_Factory        :      out_sv1_sig3d:             -47.158              70.866   [             -99.000              684.23 ]
+--- TFHandler_Factory        :     out_sv1_deltaR:            -0.58006             0.54591   [             -1.0000              7.5611 ]
+--- TFHandler_Factory        :        out_sv1_Lxy:              2.0575              6.2841   [             -1.0000              142.84 ]
+--- TFHandler_Factory        :        out_sv1_L3d:              4.2900              13.056   [             -1.0000              569.80 ]
+--- TFHandler_Factory        :         out_jf_llr:             -46.190              50.081   [             -99.000              7.8978 ]
+--- TFHandler_Factory        :           out_jf_m:              1204.0              1686.6   [             -99.000              9990.3 ]
+--- TFHandler_Factory        :         out_jf_efc:             -46.510              49.724   [             -99.000              1.0000 ]
+--- TFHandler_Factory        : out_jf_dRFlightDir:             -46.783              49.465   [             -99.000              1.1522 ]
+--- TFHandler_Factory        :    out_jf_ntrkAtVx:             0.89116              2.3348   [             -1.0000              13.000 ]
+--- TFHandler_Factory        :        out_jf_nvtx:           -0.042050             0.99481   [             -1.0000              4.0000 ]
+--- TFHandler_Factory        :       out_jf_sig3d:             -36.128              61.315   [             -99.000              93.318 ]
+--- TFHandler_Factory        :      out_jf_nvtx1t:            -0.18208             0.92151   [             -1.0000              7.0000 ]
+--- TFHandler_Factory        :         out_jf_n2t:              1.4552              4.1342   [             -1.0000              74.000 ]
+--- TFHandler_Factory        : -------------------------------------------------------------------------------------------------------------
+--- TFHandler_Factory        : Plot event variables for Id
+--- TFHandler_Factory        : [32m
+--- TFHandler_Factory        : <PlotVariables> Will not produce scatter plots ==> 
+--- TFHandler_Factory        : |  The number of 25 input variables and 0 target values would require 300 two-dimensional
+--- TFHandler_Factory        : |  histograms, which would occupy the computer's memory. Note that this
+--- TFHandler_Factory        : |  suppression does not have any consequences for your analysis, other
+--- TFHandler_Factory        : |  than not disposing of these scatter plots. You can modify the maximum
+--- TFHandler_Factory        : |  number of input variables allowed to generate scatter plots in your
+--- TFHandler_Factory        : |  script via the command line:
+--- TFHandler_Factory        : |  "(TMVA::gConfig().GetVariablePlotting()).fMaxNumOfAllowedVariablesForScatterPlots = <some int>;"[0m
+--- TFHandler_Factory        : 
+--- TFHandler_Factory        : Some more output
+--- TFHandler_Factory        :  
+--- TFHandler_Factory        : Ranking input variables (method unspecific)...
+--- IdTransformation         : Ranking result (top variable is best ranked)
+--- IdTransformation         : -------------------------------------------
+--- IdTransformation         : Rank : Variable           : Separation
+--- IdTransformation         : -------------------------------------------
+--- IdTransformation         :    1 : out_ip3d_cllr_pcpu : 6.336e-01
+--- IdTransformation         :    2 : out_jf_llr         : 6.155e-01
+--- IdTransformation         :    3 : out_ip2d_cllr_pcpu : 6.148e-01
+--- IdTransformation         :    4 : out_jf_m           : 6.121e-01
+--- IdTransformation         :    5 : out_ip3d_cllr_pbpu : 6.072e-01
+--- IdTransformation         :    6 : out_jf_ntrkAtVx    : 5.987e-01
+--- IdTransformation         :    7 : out_jf_nvtx        : 5.938e-01
+--- IdTransformation         :    8 : out_jf_sig3d       : 5.882e-01
+--- IdTransformation         :    9 : out_sv1_deltaR     : 5.797e-01
+--- IdTransformation         :   10 : out_sv1_m          : 5.751e-01
+--- IdTransformation         :   11 : out_sv1_n2t        : 5.745e-01
+--- IdTransformation         :   12 : out_sv1_ntrkv      : 5.740e-01
+--- IdTransformation         :   13 : out_sv1_Lxy        : 5.734e-01
+--- IdTransformation         :   14 : out_sv1_sig3d      : 5.731e-01
+--- IdTransformation         :   15 : out_sv1_efc        : 5.727e-01
+--- IdTransformation         :   16 : out_jf_nvtx1t      : 5.551e-01
+--- IdTransformation         :   17 : out_jf_n2t         : 5.458e-01
+--- IdTransformation         :   18 : out_jf_efc         : 5.282e-01
+--- IdTransformation         :   19 : out_jf_dRFlightDir : 5.281e-01
+--- IdTransformation         :   20 : out_ip2d_cllr_pbpu : 5.240e-01
+--- IdTransformation         :   21 : out_sv1_L3d        : 4.908e-01
+--- IdTransformation         :   22 : out_ip3d_cllr_pbpc : 3.688e-01
+--- IdTransformation         :   23 : out_ip2d_cllr_pbpc : 3.404e-01
+--- IdTransformation         :   24 : out_pt             : 2.279e-01
+--- IdTransformation         :   25 : out_abseta         : 3.655e-03
+--- IdTransformation         : -------------------------------------------
+--- Factory                  :  
+--- Factory                  : Train all methods for Classification ...
+--- Factory                  : Train method: BDT for Classification
+--- BDT                      : Begin training
+--- BDT                      :  found and suggest the following possible pre-selection cuts 
+--- BDT                      : as option DoPreselection was not used, these cuts however will not be performed, but the training will see the full sample
+--- BDT                      :  found cut: Sig if var 4 > 10.8579
+--- BDT                      :  found cut: Sig if var 16 > 6.68344
+--- BDT                      : <InitEventSample> For classification trees, 
+--- BDT                      :  the effective number of backgrounds is scaled to match 
+--- BDT                      :  the signal. Othersise the first boosting step would do 'just that'!
+--- BDT                      : re-normlise events such that Sig and Bkg have respective sum of weights = 1
+--- BDT                      :   sig->sig*1ev. bkg->bkg*1ev.
+--- BDT                      : #events: (reweighted) sig: 80000 bkg: 80000
+--- BDT                      : #events: (unweighted) sig: 80000 bkg: 80000
+--- BDT                      : Training 1000 Decision Trees ... patience please
+--- BinaryTree               : The minimal node size MinNodeSize=2.5 fMinNodeSize=2.5% is translated to an actual number of events = 1990.73 for the training sample size of 79629
+--- BinaryTree               : Note: This number will be taken as absolute minimum in the node, 
+--- BinaryTree               :       in terms of 'weighted events' and unweighted ones !! 
+--- BDT                      : <Train> elapsed time: [1;31m207 sec[0m                              
+--- BDT                      : <Train> average number of nodes (w/o pruning) : 8
+--- BDT                      : End of training                                              
+--- BDT                      : Elapsed time for training with 160000 events: [1;31m210 sec[0m         
+--- BDT                      : Create MVA output for classification on training sample
+--- BDT                      : Evaluation of BDT on training sample (160000 events)
+--- BDT                      : Elapsed time for evaluation of 160000 events: [1;31m29 sec[0m       
+--- BDT                      : Creating weight file in xml format: [0;36mweights/TMVAClassification_BDT.weights.xml[0m
+--- BDT                      : Creating standalone response class: [0;36mweights/TMVAClassification_BDT.class.C[0m
+--- BDT                      : Write monitoring histograms to file: rootfiles/TMVAclassified.root:/Method_BDT/BDT
+--- Factory                  : Training finished
+--- Factory                  : 
+--- Factory                  : Ranking input variables (method specific)...
+--- BDT                      : Ranking result (top variable is best ranked)
+--- BDT                      : ----------------------------------------------------
+--- BDT                      : Rank : Variable           : Variable Importance
+--- BDT                      : ----------------------------------------------------
+--- BDT                      :    1 : out_abseta         : 8.701e-02
+--- BDT                      :    2 : out_ip3d_cllr_pbpu : 6.452e-02
+--- BDT                      :    3 : out_sv1_m          : 6.365e-02
+--- BDT                      :    4 : out_jf_llr         : 6.240e-02
+--- BDT                      :    5 : out_pt             : 5.938e-02
+--- BDT                      :    6 : out_sv1_ntrkv      : 5.572e-02
+--- BDT                      :    7 : out_ip3d_cllr_pcpu : 5.270e-02
+--- BDT                      :    8 : out_jf_m           : 5.154e-02
+--- BDT                      :    9 : out_sv1_n2t        : 4.189e-02
+--- BDT                      :   10 : out_sv1_deltaR     : 4.157e-02
+--- BDT                      :   11 : out_jf_n2t         : 4.152e-02
+--- BDT                      :   12 : out_ip2d_cllr_pbpc : 3.764e-02
+--- BDT                      :   13 : out_ip2d_cllr_pbpu : 3.756e-02
+--- BDT                      :   14 : out_jf_sig3d       : 3.670e-02
+--- BDT                      :   15 : out_jf_efc         : 3.624e-02
+--- BDT                      :   16 : out_ip2d_cllr_pcpu : 3.569e-02
+--- BDT                      :   17 : out_ip3d_cllr_pbpc : 3.421e-02
+--- BDT                      :   18 : out_jf_ntrkAtVx    : 3.201e-02
+--- BDT                      :   19 : out_jf_nvtx1t      : 2.904e-02
+--- BDT                      :   20 : out_sv1_Lxy        : 2.449e-02
+--- BDT                      :   21 : out_jf_dRFlightDir : 2.183e-02
+--- BDT                      :   22 : out_sv1_sig3d      : 2.152e-02
+--- BDT                      :   23 : out_sv1_efc        : 1.903e-02
+--- BDT                      :   24 : out_sv1_L3d        : 1.213e-02
+--- BDT                      :   25 : out_jf_nvtx        : 0.000e+00
+--- BDT                      : ----------------------------------------------------
+--- Factory                  : 
+--- Factory                  : === Destroy and recreate all methods via weight files for testing ===
+--- Factory                  : 
+--- MethodBase               : Reading weight file: [0;36mweights/TMVAClassification_BDT.weights.xml[0m
+--- BDT                      : Read method "BDT" of type "BDT"
+--- BDT                      : MVA method was trained with TMVA Version: 4.2.0
+--- BDT                      : MVA method was trained with ROOT Version: 5.34/30
+--- Factory                  : Test all methods...
+--- Factory                  : Test method: BDT for Classification performance
+--- BDT                      : Evaluation of BDT on testing sample (160000 events)
+--- BDT                      : Elapsed time for evaluation of 160000 events: [1;31m26.1 sec[0m       
+--- Factory                  : Evaluate all methods...
+--- Factory                  : Evaluate classifier: BDT
+--- BDT                      : Loop over test events and fill histograms with classifier response...
+--- Factory                  : Write evaluation histograms to file
+--- TFHandler_BDT            : Plot event variables for BDT
+--- TFHandler_BDT            : -------------------------------------------------------------------------------------------------------------
+--- TFHandler_BDT            :           Variable                  Mean                  RMS          [        Min                  Max ]
+--- TFHandler_BDT            : -------------------------------------------------------------------------------------------------------------
+--- TFHandler_BDT            :             out_pt:              60308.              48167.   [              20001.          1.6986e+06 ]
+--- TFHandler_BDT            :         out_abseta:              1.0121             0.66449   [          4.0835e-06              2.5000 ]
+--- TFHandler_BDT            : out_ip2d_cllr_pbpu:             -1.8957              12.290   [             -30.000              100.00 ]
+--- TFHandler_BDT            : out_ip2d_cllr_pbpc:             -3.7904              10.643   [             -30.000              100.00 ]
+--- TFHandler_BDT            : out_ip2d_cllr_pcpu:             -2.0268              11.541   [             -30.000              100.00 ]
+--- TFHandler_BDT            : out_ip3d_cllr_pbpu:             -1.4801              12.633   [             -30.000              100.00 ]
+--- TFHandler_BDT            : out_ip3d_cllr_pbpc:             -3.6346              10.829   [             -30.000              100.00 ]
+--- TFHandler_BDT            : out_ip3d_cllr_pcpu:             -1.7598              11.658   [             -30.000              100.00 ]
+--- TFHandler_BDT            :      out_sv1_ntrkv:             0.85255              2.5293   [             -1.0000              13.000 ]
+--- TFHandler_BDT            :        out_sv1_n2t:              1.6780              5.0122   [             -1.0000              87.000 ]
+--- TFHandler_BDT            :          out_sv1_m:              680.92              1156.0   [             -99.000              5997.5 ]
+--- TFHandler_BDT            :        out_sv1_efc:             -60.328              48.534   [             -99.000             0.99999 ]
+--- TFHandler_BDT            :      out_sv1_sig3d:             -47.508              70.399   [             -99.000              596.46 ]
+--- TFHandler_BDT            :     out_sv1_deltaR:            -0.58082             0.54822   [             -1.0000              6.6805 ]
+--- TFHandler_BDT            :        out_sv1_Lxy:              2.0299              6.3015   [             -1.0000              167.03 ]
+--- TFHandler_BDT            :        out_sv1_L3d:              4.2248              13.076   [             -1.0000              616.34 ]
+--- TFHandler_BDT            :         out_jf_llr:             -46.259              50.082   [             -99.000              7.9158 ]
+--- TFHandler_BDT            :           out_jf_m:              1202.2              1688.0   [             -99.000              9999.3 ]
+--- TFHandler_BDT            :         out_jf_efc:             -46.576              49.728   [             -99.000              1.0000 ]
+--- TFHandler_BDT            : out_jf_dRFlightDir:             -46.849              49.469   [             -99.000              1.5188 ]
+--- TFHandler_BDT            :    out_jf_ntrkAtVx:             0.88221              2.3262   [             -1.0000              13.000 ]
+--- TFHandler_BDT            :        out_jf_nvtx:           -0.043838             0.99415   [             -1.0000              4.0000 ]
+--- TFHandler_BDT            :       out_jf_sig3d:             -36.323              61.173   [             -99.000              92.514 ]
+--- TFHandler_BDT            :      out_jf_nvtx1t:            -0.18263             0.92349   [             -1.0000              6.0000 ]
+--- TFHandler_BDT            :         out_jf_n2t:              1.4404              4.1429   [             -1.0000              61.000 ]
+--- TFHandler_BDT            : -------------------------------------------------------------------------------------------------------------
+--- TFHandler_BDT            : [32m
+--- TFHandler_BDT            : <PlotVariables> Will not produce scatter plots ==> 
+--- TFHandler_BDT            : |  The number of 25 input variables and 0 target values would require 300 two-dimensional
+--- TFHandler_BDT            : |  histograms, which would occupy the computer's memory. Note that this
+--- TFHandler_BDT            : |  suppression does not have any consequences for your analysis, other
+--- TFHandler_BDT            : |  than not disposing of these scatter plots. You can modify the maximum
+--- TFHandler_BDT            : |  number of input variables allowed to generate scatter plots in your
+--- TFHandler_BDT            : |  script via the command line:
+--- TFHandler_BDT            : |  "(TMVA::gConfig().GetVariablePlotting()).fMaxNumOfAllowedVariablesForScatterPlots = <some int>;"[0m
+--- TFHandler_BDT            : 
+--- TFHandler_BDT            : Some more output
+[1;31m--- <WARNING> Tools                    : <GetCorrelationMatrix> zero variances for variables (0, 2)[0m
+[1;31m--- <WARNING> Tools                    : <GetCorrelationMatrix> zero variances for variables (0, 14)[0m
+[1;31m--- <WARNING> Tools                    : <GetCorrelationMatrix> zero variances for variables (0, 22)[0m
+[1;31m--- <WARNING> Tools                    : <GetCorrelationMatrix> zero variances for variables (0, 24)[0m
+[1;31m--- <WARNING> Tools                    : <GetCorrelationMatrix> zero variances for variables (2, 0)[0m
+[1;31m--- <WARNING> Tools                    : <GetCorrelationMatrix> zero variances for variables (14, 0)[0m
+[1;31m--- <WARNING> Tools                    : <GetCorrelationMatrix> zero variances for variables (22, 0)[0m
+[1;31m--- <WARNING> Tools                    : <GetCorrelationMatrix> zero variances for variables (24, 0)[0m
+[1;31m--- <WARNING> Tools                    : <GetCorrelationMatrix> zero variances for variables (0, 2)[0m
+[1;31m--- <WARNING> Tools                    : <GetCorrelationMatrix> zero variances for variables (0, 9)[0m
+[1;31m--- <WARNING> Tools                    : <GetCorrelationMatrix> zero variances for variables (0, 10)[0m
+[1;31m--- <WARNING> Tools                    : <GetCorrelationMatrix> zero variances for variables (0, 14)[0m
+[1;31m--- <WARNING> Tools                    : <GetCorrelationMatrix> zero variances for variables (0, 21)[0m
+[1;31m--- <WARNING> Tools                    : <GetCorrelationMatrix> zero variances for variables (0, 22)[0m
+[1;31m--- <WARNING> Tools                    : <GetCorrelationMatrix> zero variances for variables (0, 24)[0m
+[1;31m--- <WARNING> Tools                    : <GetCorrelationMatrix> zero variances for variables (0, 25)[0m
+[1;31m--- <WARNING> Tools                    : <GetCorrelationMatrix> zero variances for variables (2, 0)[0m
+[1;31m--- <WARNING> Tools                    : <GetCorrelationMatrix> zero variances for variables (9, 0)[0m
+[1;31m--- <WARNING> Tools                    : <GetCorrelationMatrix> zero variances for variables (9, 14)[0m
+[1;31m--- <WARNING> Tools                    : <GetCorrelationMatrix> zero variances for variables (10, 0)[0m
+[1;31m--- <WARNING> Tools                    : <GetCorrelationMatrix> zero variances for variables (10, 14)[0m
+[1;31m--- <WARNING> Tools                    : <GetCorrelationMatrix> zero variances for variables (14, 0)[0m
+[1;31m--- <WARNING> Tools                    : <GetCorrelationMatrix> zero variances for variables (14, 9)[0m
+[1;31m--- <WARNING> Tools                    : <GetCorrelationMatrix> zero variances for variables (14, 10)[0m
+[1;31m--- <WARNING> Tools                    : <GetCorrelationMatrix> zero variances for variables (14, 22)[0m
+[1;31m--- <WARNING> Tools                    : <GetCorrelationMatrix> zero variances for variables (21, 0)[0m
+[1;31m--- <WARNING> Tools                    : <GetCorrelationMatrix> zero variances for variables (22, 0)[0m
+[1;31m--- <WARNING> Tools                    : <GetCorrelationMatrix> zero variances for variables (22, 14)[0m
+[1;31m--- <WARNING> Tools                    : <GetCorrelationMatrix> zero variances for variables (24, 0)[0m
+[1;31m--- <WARNING> Tools                    : <GetCorrelationMatrix> zero variances for variables (25, 0)[0m
+--- Factory                  : Correlations between input variables and MVA response (signal):
+--- Factory                  : ----------------
+--- Factory                  :                         BDT
+--- Factory                  :             out_pt:  +0.141
+--- Factory                  :         out_abseta:  +0.000
+--- Factory                  : out_ip2d_cllr_pbpu:  +0.662
+--- Factory                  : out_ip2d_cllr_pbpc:  +0.441
+--- Factory                  : out_ip2d_cllr_pcpu:  +0.571
+--- Factory                  : out_ip3d_cllr_pbpu:  +0.732
+--- Factory                  : out_ip3d_cllr_pbpc:  +0.482
+--- Factory                  : out_ip3d_cllr_pcpu:  +0.656
+--- Factory                  :      out_sv1_ntrkv:  +0.799
+--- Factory                  :        out_sv1_n2t:  +0.581
+--- Factory                  :          out_sv1_m:  +0.750
+--- Factory                  :        out_sv1_efc:  +0.795
+--- Factory                  :      out_sv1_sig3d:  +0.694
+--- Factory                  :     out_sv1_deltaR:  +0.000
+--- Factory                  :        out_sv1_Lxy:  +0.367
+--- Factory                  :        out_sv1_L3d:  +0.262
+--- Factory                  :         out_jf_llr:  +0.630
+--- Factory                  :           out_jf_m:  +0.573
+--- Factory                  :         out_jf_efc:  +0.582
+--- Factory                  : out_jf_dRFlightDir:  +0.577
+--- Factory                  :    out_jf_ntrkAtVx:  +0.742
+--- Factory                  :        out_jf_nvtx:  +0.000
+--- Factory                  :       out_jf_sig3d:  +0.681
+--- Factory                  :      out_jf_nvtx1t:  +0.000
+--- Factory                  :         out_jf_n2t:  +0.387
+--- Factory                  : ----------------
+--- Factory                  : 
+--- Factory                  : Correlations between input variables and MVA response (background):
+--- Factory                  : ----------------
+--- Factory                  :                         BDT
+--- Factory                  :             out_pt:  +0.367
+--- Factory                  :         out_abseta:  +0.000
+--- Factory                  : out_ip2d_cllr_pbpu:  +0.711
+--- Factory                  : out_ip2d_cllr_pbpc:  +0.699
+--- Factory                  : out_ip2d_cllr_pcpu:  +0.719
+--- Factory                  : out_ip3d_cllr_pbpu:  +0.711
+--- Factory                  : out_ip3d_cllr_pbpc:  +0.693
+--- Factory                  : out_ip3d_cllr_pcpu:  +0.720
+--- Factory                  :      out_sv1_ntrkv:  +0.000
+--- Factory                  :        out_sv1_n2t:  +0.000
+--- Factory                  :          out_sv1_m:  +0.263
+--- Factory                  :        out_sv1_efc:  +0.296
+--- Factory                  :      out_sv1_sig3d:  +0.250
+--- Factory                  :     out_sv1_deltaR:  +0.000
+--- Factory                  :        out_sv1_Lxy:  +0.144
+--- Factory                  :        out_sv1_L3d:  +0.117
+--- Factory                  :         out_jf_llr:  +0.437
+--- Factory                  :           out_jf_m:  +0.407
+--- Factory                  :         out_jf_efc:  +0.434
+--- Factory                  : out_jf_dRFlightDir:  +0.434
+--- Factory                  :    out_jf_ntrkAtVx:  +0.000
+--- Factory                  :        out_jf_nvtx:  +0.000
+--- Factory                  :       out_jf_sig3d:  +0.437
+--- Factory                  :      out_jf_nvtx1t:  +0.000
+--- Factory                  :         out_jf_n2t:  +0.000
+--- Factory                  : ----------------
+--- Factory                  : 
+--- Factory                  : The following "overlap" matrices contain the fraction of events for which 
+--- Factory                  : the MVAs 'i' and 'j' have returned conform answers about "signal-likeness"
+--- Factory                  : An event is signal-like, if its MVA output exceeds the following value:
+--- Factory                  : --------------------
+--- Factory                  :  Method:  Cut value:
+--- Factory                  : --------------------
+--- Factory                  :     BDT:     -0.030
+--- Factory                  : --------------------
+--- Factory                  : which correspond to the working point: eff(signal) = 1 - eff(background)
+--- Factory                  : 
+--- Factory                  : Evaluation results ranked by best signal efficiency and purity (area)
+--- Factory                  : --------------------------------------------------------------------------------
+--- Factory                  : MVA              Signal efficiency at bkg eff.(error):       | Sepa-    Signifi- 
+--- Factory                  : Method:          @B=0.01    @B=0.10    @B=0.30    ROC-integ. | ration:  cance:   
+--- Factory                  : --------------------------------------------------------------------------------
+--- Factory                  : BDT            : 0.803(01)  0.915(00)  0.963(00)    0.969    | 0.748    2.008
+--- Factory                  : --------------------------------------------------------------------------------
+--- Factory                  : 
+--- Factory                  : Testing efficiency compared to training efficiency (overtraining check)
+--- Factory                  : --------------------------------------------------------------------------------
+--- Factory                  : MVA              Signal efficiency: from test sample (from training sample) 
+--- Factory                  : Method:          @B=0.01             @B=0.10            @B=0.30   
+--- Factory                  : --------------------------------------------------------------------------------
+--- Factory                  : BDT            : 0.803 (0.804)       0.915 (0.916)      0.963 (0.964)
+--- Factory                  : --------------------------------------------------------------------------------
+--- Factory                  : 
+--- Dataset:Default          : Created tree 'TestTree' with 160000 events
+--- Dataset:Default          : Created tree 'TrainTree' with 160000 events
+--- Factory                  :   
+--- Factory                  : [1mThank you for using TMVA![0m
+--- Factory                  : [1mFor citation information, please visit: http://tmva.sf.net/citeTMVA.html[0m
+
+---- End of training, testing and performance comparison: Real time 0:04:57, CP time 296.190
+===> Wrote root file: rootfiles/TMVAclassified.root
+===> NewTMVAClassification is done!
+
+(int)0
